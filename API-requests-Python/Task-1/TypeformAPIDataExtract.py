@@ -38,11 +38,12 @@ typeform_data.close()
         
 
 
-#customer_data_questions = "questions":[{"id":"listimage_W4p6_choice","question":"From what kind of device did you place your order?","field_id":46723636},{"id":"group_KO2t","question":"How would you rate our online store, based on...","field_id":46723634}, ..}]
+#customer_data_questions = {"questions":[{"id":"listimage_W4p6_choice","question":"From what kind of device did you place your order?","field_id":46723636},{"id":"group_KO2t","question":"How would you rate our online store, based on...","field_id":46723634}, ..}]}
 #customer_data_answers = "answers":{"listimage_W4p6_choice":"Smartphone","rating_wYTo":"5","opinionscale_BNVc":"10","textarea_By2g":"Very good","email_NfJm":"pat.ainkaran@gmail.com"}}, .. 
 
 with open('C:/Users/Administrator/Documents/1-Python/CustFeedback.json', encoding='utf-8') as customer_data:
 
+      #print(customer_data)
 
       customer_parsed = json.loads(customer_data.read())
       
@@ -101,10 +102,9 @@ with open('C:/Users/Administrator/Documents/1-Python/CustFeedback.json', encodin
                         count += 1
                         
 
-                  '''
                   #print(type(custQ.values()))
                   #print(type(custA.values()))
-                  '''
+                  
 
                   valueslistQ = list(custQ.values())
                   valueslistA = list(custA.values())
@@ -113,10 +113,10 @@ with open('C:/Users/Administrator/Documents/1-Python/CustFeedback.json', encodin
                   #valueslist.pop(0)
                   #valueslist.pop()
                   
-                  '''
+                  
                   #print(type(valueslistQ))
                   #print(type(valueslistA))
-                  '''
+                  
                   
                   #newvalueslist = [s for s in valueslist if s.isdigit()]
                   
@@ -125,8 +125,8 @@ with open('C:/Users/Administrator/Documents/1-Python/CustFeedback.json', encodin
                                  
 
                   
-                  for k, v in cust_data_questions.items():
-                          print(k, v)
+                  #for k, v in cust_data_questions.items():
+                  #        print(k, v)
                           
                           
                   #print(v)
@@ -137,9 +137,9 @@ with open('C:/Users/Administrator/Documents/1-Python/CustFeedback.json', encodin
                           #else:
                                   #csvwriter.writerow(["NaN"])  
                   
-                  a=csvwriter.writerow([valueslistQ[0]])
-                  b=csvwriter.writerow([valueslistQ[1]])
-                  c=csvwriter.writerow([valueslistQ[2]])
+                  csvwriter.writerow([valueslistQ[0]])
+                  csvwriter.writerow([valueslistQ[1]])
+                  csvwriter.writerow([valueslistQ[2]])
 
                   
                   
@@ -173,16 +173,16 @@ with open('C:/Users/Administrator/Documents/1-Python/CustFeedback.json', encodin
                   '''
                                   
 
+                  #for i in (0,1):
                   for key,value in customer_parsed['responses'][1]['answers'].items():
-                          
-                          #print(key, value)
-                  
-                          
-                          if (valueslistQ[count] == key):
-                                  d=csvwriter.writerow([value])
-                          #else:
-                                  #csvwriter.writerow(["NaN"])               
-                               
+                                          
+                  #print(customer_parsed['responses'][i]['answers']['listimage_W4p6_choice'])
+                  #print(cust_data_questions[i]['id'])
+                          print(key,value)
+                          if (cust_data_questions[0]['id'] == key):                                        
+                                  csvwriter.writerow([value])
+                          else:
+                                  csvwriter.writerow(["NaN"])                                                       
                               
                   
 
