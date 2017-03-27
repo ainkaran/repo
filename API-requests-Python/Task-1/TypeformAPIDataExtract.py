@@ -4,6 +4,7 @@ https://docs.python.org/3/tutorial/datastructures.html
 http://stackoverflow.com/questions/33308538/how-to-extract-specific-multiple-values-in-json-using-python
 https://www.codecademy.com/ja/courses/python-intermediate-en-6zbLp/0/4?curriculum_id=50ecb8cb058fd2ebda00003b
 https://www.youtube.com/watch?v=uYlgOFsnxEk
+https://github.com/ainkaran/repo/blob/master/API-requests-Python/Task-1/TypeformAPIDataExtract.py
 
 '''
 """
@@ -148,8 +149,37 @@ with open('C:/Users/Administrator/Documents/1-Python/CustFeedback.json', encodin
 
                         '''                       
 
+        #print(type(customer_parsed['questions'][0]))
+        #print(type(customer_parsed['responses'][1]['answers']))
+
+        #print(customer_parsed['questions'][1])
+        #print(customer_parsed['responses'][1]['answers'])
+
+
+        questions = customer_parsed['questions'][0]
+        answers = customer_parsed['responses'][1]['answers']
+        
         for i in range(len(cust_data_questions)):
-                for key,value in customer_parsed['responses'][1]['answers'].items():                                                                        
+
+                questions = customer_parsed['questions'][i]
+                #print(questions['id'])
+                #print(customer_parsed['questions'][i]['question'])
+                #print(answers[questions['id']][i])
+
+                if questions['id'] in answers:
+                        print(customer_parsed['questions'][i]['question'])                        
+                        print(answers[questions['id']])
+                        csvwriter.writerow([customer_parsed['questions'][i]['question']])
+                        csvwriter.writerow([answers[questions['id']]])
+                else:
+                        print(customer_parsed['questions'][i]['question'])
+                        print('NaN')
+                        csvwriter.writerow([customer_parsed['questions'][i]['question']])
+                        csvwriter.writerow(['NaN'])                        
+
+                '''
+                for i, v in enumerate(customer_parsed['responses'][1]['answers']):
+                        #for key,value in customer_parsed['responses'][1]['answers'].items():                                                                        
 
                                         
                         #print(customer_parsed['responses'][1]['answers'].items())
@@ -159,10 +189,11 @@ with open('C:/Users/Administrator/Documents/1-Python/CustFeedback.json', encodin
                         #print(key,value)
                         
 
-                                        
-                        if (customer_parsed['questions'][i]['id'] == key):                                        
+                        #print(i)
+                        
+                        if (customer_parsed['questions'][i]['id'] == v):                                        
                                 csvwriter.writerow([list(customer_parsed['questions'][i].values())])
-                                csvwriter.writerow([value])
+                                #csvwriter.writerow([value])
                                                        
                                 #print([list(customer_parsed['questions'][i].values())])
                                 #print([sorted(list(customer_parsed['questions'][0].values())[2])])
@@ -177,6 +208,7 @@ with open('C:/Users/Administrator/Documents/1-Python/CustFeedback.json', encodin
                                 #print([list(customer_parsed['questions'][i].values())])
                                 #print('NaA')
                                 #print(key)
-                                #print(sortedheaderlistQ)                        
+                                #print(sortedheaderlistQ)
+                '''
   
 customer_response_data.close()
