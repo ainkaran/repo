@@ -1,0 +1,384 @@
+Python 3.4.4 (v3.4.4:737efcadf5a6, Dec 20 2015, 19:28:18) [MSC v.1600 32 bit (Intel)] on win32
+Type "copyright", "credits" or "license()" for more information.
+>>> 
+======= RESTART: C:\Users\Administrator\Documents\1-Python\apitest.py =======
+{'http_status': 200,
+ 'questions': [{'field_id': 46723636,
+                'id': 'listimage_W4p6_choice',
+                'question': 'From what kind of device did you place your '
+                            'order?'},
+               {'field_id': 46723634,
+                'id': 'group_KO2t',
+                'question': 'How would you rate our online\xa0store, based '
+                            'on...'},
+               {'field_id': 46723637,
+                'group': 'group_46723634',
+                'id': 'rating_wYTo',
+                'question': 'Design and presentation?'},
+               {'field_id': 46723638,
+                'group': 'group_46723634',
+                'id': 'rating_r1qW',
+                'question': 'Range of products?'},
+               {'field_id': 46723639,
+                'group': 'group_46723634',
+                'id': 'rating_Wx7b',
+                'question': 'Ease of finding what you wanted to buy?'},
+               {'field_id': 46723640,
+                'group': 'group_46723634',
+                'id': 'rating_ONUD',
+                'question': 'The clarity of our product descriptions?'},
+               {'field_id': 46723635,
+                'id': 'group_FiKi',
+                'question': 'And how would you rate our delivery service, '
+                            'based on...'},
+               {'field_id': 46723641,
+                'group': 'group_46723635',
+                'id': 'rating_FzCa',
+                'question': 'Speed of delivery?'},
+               {'field_id': 46723642,
+                'group': 'group_46723635',
+                'id': 'rating_KLJ8',
+                'question': 'Friendliness of delivery driver?'},
+               {'field_id': 46723643,
+                'group': 'group_46723635',
+                'id': 'rating_AZ8K',
+                'question': 'Quality and condition of the received product?'},
+               {'field_id': 46723644,
+                'id': 'opinionscale_BNVc',
+                'question': 'How likely are you to recommend us to a '
+                            'friend or colleague?'},
+               {'field_id': 46723645,
+                'id': 'textarea_By2g',
+                'question': "Are there any comments or suggestions you'd "
+                            'like to share with us?'},
+               {'field_id': 46723646,
+                'id': 'email_NfJm',
+                'question': '<strong>Finally, would you\xa0like 15% off '
+                            'your next shop?<br /></strong>Leave us your '
+                            "email address and we'll send you a coupon."}],
+ 'responses': [{'answers': {},
+                'completed': '0',
+                'hidden': [],
+                'metadata': {'browser': 'default',
+                             'date_land': '2017-03-25 02:02:03',
+                             'date_submit': '0000-00-00 00:00:00',
+                             'network_id': 'f5861ab838',
+                             'platform': 'other',
+                             'referer': 'https://ainkaran.typeform.com/to/cZGxu9',
+                             'user_agent': 'Mozilla/5.0 (Windows NT 6.3; '
+                                           'Win64; x64) '
+                                           'AppleWebKit/537.36 (KHTML, '
+                                           'like Gecko) '
+                                           'Chrome/56.0.2924.87 '
+                                           'Safari/537.36'},
+                'token': '369dfce1ec06702c09bf66008ed73b3a'},
+               {'answers': {'email_NfJm': 'pat.ainkaran@gmail.com',
+                            'listimage_W4p6_choice': 'Smartphone',
+                            'opinionscale_BNVc': '10',
+                            'rating_wYTo': '5',
+                            'textarea_By2g': 'Very good'},
+                'completed': '1',
+                'hidden': [],
+                'metadata': {'browser': 'default',
+                             'date_land': '2017-03-25 02:08:02',
+                             'date_submit': '2017-03-25 02:11:37',
+                             'network_id': 'f5861ab838',
+                             'platform': 'other',
+                             'referer': 'https://ainkaran.typeform.com/to/cZGxu9',
+                             'user_agent': 'Mozilla/5.0 (Windows NT 6.3; '
+                                           'Win64; x64) '
+                                           'AppleWebKit/537.36 (KHTML, '
+                                           'like Gecko) '
+                                           'Chrome/56.0.2924.87 '
+                                           'Safari/537.36'},
+                'token': '06a67609d2b91164ffed0a608427e30d'},
+               {'answers': {},
+                'completed': '0',
+                'hidden': [],
+                'metadata': {'browser': 'default',
+                             'date_land': '2017-03-25 02:15:42',
+                             'date_submit': '0000-00-00 00:00:00',
+                             'network_id': 'f5861ab838',
+                             'platform': 'other',
+                             'referer': 'https://ainkaran.typeform.com/to/cZGxu9',
+                             'user_agent': 'Mozilla/5.0 (Windows NT 6.3; '
+                                           'Win64; x64) '
+                                           'AppleWebKit/537.36 (KHTML, '
+                                           'like Gecko) '
+                                           'Chrome/56.0.2924.87 '
+                                           'Safari/537.36'},
+                'token': '9985f9b90b50da7fd3415d8479ae3818'},
+               {'answers': {},
+                'completed': '0',
+                'hidden': [],
+                'metadata': {'browser': 'default',
+                             'date_land': '2017-03-25 02:17:25',
+                             'date_submit': '0000-00-00 00:00:00',
+                             'network_id': 'f5861ab838',
+                             'platform': 'other',
+                             'referer': 'https://ainkaran.typeform.com/to/cZGxu9',
+                             'user_agent': 'Mozilla/5.0 (Windows NT 6.3; '
+                                           'Win64; x64) '
+                                           'AppleWebKit/537.36 (KHTML, '
+                                           'like Gecko) '
+                                           'Chrome/56.0.2924.87 '
+                                           'Safari/537.36'},
+                'token': '37f0ca5ee06c3fdc6245b5f8b4e26813'},
+               {'answers': {},
+                'completed': '0',
+                'hidden': [],
+                'metadata': {'browser': 'default',
+                             'date_land': '2017-03-25 02:21:52',
+                             'date_submit': '0000-00-00 00:00:00',
+                             'network_id': 'f5861ab838',
+                             'platform': 'other',
+                             'referer': 'https://ainkaran.typeform.com/to/cZGxu9',
+                             'user_agent': 'Mozilla/5.0 (Windows NT 6.3; '
+                                           'Win64; x64) '
+                                           'AppleWebKit/537.36 (KHTML, '
+                                           'like Gecko) '
+                                           'Chrome/56.0.2924.87 '
+                                           'Safari/537.36'},
+                'token': '0b43e9890c765a6d37a39a883bfbee1f'},
+               {'answers': {},
+                'completed': '0',
+                'hidden': [],
+                'metadata': {'browser': 'default',
+                             'date_land': '2017-03-25 02:28:53',
+                             'date_submit': '0000-00-00 00:00:00',
+                             'network_id': 'f5861ab838',
+                             'platform': 'other',
+                             'referer': 'https://ainkaran.typeform.com/to/cZGxu9?typeform-embed=embed-widget',
+                             'user_agent': 'Mozilla/5.0 (Windows NT 6.3; '
+                                           'Win64; x64) '
+                                           'AppleWebKit/537.36 (KHTML, '
+                                           'like Gecko) '
+                                           'Chrome/56.0.2924.87 '
+                                           'Safari/537.36'},
+                'token': 'd351d48396b7b27e63bf1c47f8277b0f'},
+               {'answers': {},
+                'completed': '0',
+                'hidden': [],
+                'metadata': {'browser': 'default',
+                             'date_land': '2017-03-25 02:28:54',
+                             'date_submit': '0000-00-00 00:00:00',
+                             'network_id': 'f5861ab838',
+                             'platform': 'other',
+                             'referer': 'https://ainkaran.typeform.com/to/cZGxu9?typeform-embed=embed-widget',
+                             'user_agent': 'Mozilla/5.0 (Windows NT 6.3; '
+                                           'Win64; x64) '
+                                           'AppleWebKit/537.36 (KHTML, '
+                                           'like Gecko) '
+                                           'Chrome/56.0.2924.87 '
+                                           'Safari/537.36'},
+                'token': '05b2448c2cdf7d9a168e3fbae0d0a71a'},
+               {'answers': {},
+                'completed': '0',
+                'hidden': [],
+                'metadata': {'browser': 'default',
+                             'date_land': '2017-03-25 02:31:32',
+                             'date_submit': '0000-00-00 00:00:00',
+                             'network_id': 'f5861ab838',
+                             'platform': 'other',
+                             'referer': 'https://ainkaran.typeform.com/to/cZGxu9',
+                             'user_agent': 'Mozilla/5.0 (Windows NT 6.3; '
+                                           'Win64; x64) '
+                                           'AppleWebKit/537.36 (KHTML, '
+                                           'like Gecko) '
+                                           'Chrome/56.0.2924.87 '
+                                           'Safari/537.36'},
+                'token': 'bc90ddb425b5babc4c02b19b37f377bc'},
+               {'answers': {},
+                'completed': '0',
+                'hidden': [],
+                'metadata': {'browser': 'default',
+                             'date_land': '2017-03-25 02:32:52',
+                             'date_submit': '0000-00-00 00:00:00',
+                             'network_id': 'f5861ab838',
+                             'platform': 'other',
+                             'referer': 'https://ainkaran.typeform.com/to/cZGxu9',
+                             'user_agent': 'Mozilla/5.0 (Windows NT 6.3; '
+                                           'Win64; x64) '
+                                           'AppleWebKit/537.36 (KHTML, '
+                                           'like Gecko) '
+                                           'Chrome/56.0.2924.87 '
+                                           'Safari/537.36'},
+                'token': '84b42e3f844aabde033ab30ff03129d5'},
+               {'answers': {},
+                'completed': '0',
+                'hidden': [],
+                'metadata': {'browser': 'default',
+                             'date_land': '2017-03-25 02:41:29',
+                             'date_submit': '0000-00-00 00:00:00',
+                             'network_id': 'f5861ab838',
+                             'platform': 'other',
+                             'referer': 'https://ainkaran.typeform.com/to/cZGxu9',
+                             'user_agent': 'Mozilla/5.0 (Windows NT 6.3; '
+                                           'Win64; x64) '
+                                           'AppleWebKit/537.36 (KHTML, '
+                                           'like Gecko) '
+                                           'Chrome/56.0.2924.87 '
+                                           'Safari/537.36'},
+                'token': 'a9bfcd6539e231dbf1235919f0dc0a21'},
+               {'answers': {},
+                'completed': '0',
+                'hidden': [],
+                'metadata': {'browser': 'default',
+                             'date_land': '2017-03-25 02:42:12',
+                             'date_submit': '0000-00-00 00:00:00',
+                             'network_id': 'f5861ab838',
+                             'platform': 'other',
+                             'referer': 'https://ainkaran.typeform.com/to/cZGxu9?key=ac83034cfa742c0f79c26e9a612b4ba7e2aa0d3d',
+                             'user_agent': 'Mozilla/5.0 (Windows NT 6.3; '
+                                           'Win64; x64) '
+                                           'AppleWebKit/537.36 (KHTML, '
+                                           'like Gecko) '
+                                           'Chrome/56.0.2924.87 '
+                                           'Safari/537.36'},
+                'token': 'd2e7c778a43e459729808df45cff6293'},
+               {'answers': {},
+                'completed': '0',
+                'hidden': [],
+                'metadata': {'browser': 'default',
+                             'date_land': '2017-03-25 02:42:44',
+                             'date_submit': '0000-00-00 00:00:00',
+                             'network_id': 'f5861ab838',
+                             'platform': 'other',
+                             'referer': 'https://ainkaran.typeform.com/to/cZGxu9?key=ac83034cfa742c0f79c26e9a612b4ba7e2aa0d3d',
+                             'user_agent': 'Mozilla/5.0 (Windows NT 6.3; '
+                                           'Win64; x64) '
+                                           'AppleWebKit/537.36 (KHTML, '
+                                           'like Gecko) '
+                                           'Chrome/56.0.2924.87 '
+                                           'Safari/537.36'},
+                'token': '5958cc2b33fd654a012bfa9d48556dc5'},
+               {'answers': {},
+                'completed': '0',
+                'hidden': [],
+                'metadata': {'browser': 'default',
+                             'date_land': '2017-03-25 04:32:50',
+                             'date_submit': '0000-00-00 00:00:00',
+                             'network_id': 'f5861ab838',
+                             'platform': 'other',
+                             'referer': 'https://ainkaran.typeform.com/to/cZGxu9?typeform-embed=embed-widget',
+                             'user_agent': 'Mozilla/5.0 (Windows NT 6.3; '
+                                           'Win64; x64) '
+                                           'AppleWebKit/537.36 (KHTML, '
+                                           'like Gecko) '
+                                           'Chrome/56.0.2924.87 '
+                                           'Safari/537.36'},
+                'token': '02cc322c7ec72f6d47bd4585a2ce79d5'},
+               {'answers': {},
+                'completed': '0',
+                'hidden': [],
+                'metadata': {'browser': 'default',
+                             'date_land': '2017-03-25 04:32:53',
+                             'date_submit': '0000-00-00 00:00:00',
+                             'network_id': 'f5861ab838',
+                             'platform': 'other',
+                             'referer': 'https://ainkaran.typeform.com/to/cZGxu9?typeform-embed=embed-widget',
+                             'user_agent': 'Mozilla/5.0 (Windows NT 6.3; '
+                                           'Win64; x64) '
+                                           'AppleWebKit/537.36 (KHTML, '
+                                           'like Gecko) '
+                                           'Chrome/56.0.2924.87 '
+                                           'Safari/537.36'},
+                'token': '9161ed6f119f6d4b94f1bcc6f1887e4a'},
+               {'answers': {},
+                'completed': '0',
+                'hidden': [],
+                'metadata': {'browser': 'default',
+                             'date_land': '2017-03-25 04:33:28',
+                             'date_submit': '0000-00-00 00:00:00',
+                             'network_id': 'f5861ab838',
+                             'platform': 'other',
+                             'referer': 'https://ainkaran.typeform.com/to/cZGxu9?typeform-embed=embed-widget',
+                             'user_agent': 'Mozilla/5.0 (Windows NT 6.3; '
+                                           'Win64; x64) '
+                                           'AppleWebKit/537.36 (KHTML, '
+                                           'like Gecko) '
+                                           'Chrome/56.0.2924.87 '
+                                           'Safari/537.36'},
+                'token': '0605f40d9b255d0e9a58939ff7c6e11d'},
+               {'answers': {},
+                'completed': '0',
+                'hidden': [],
+                'metadata': {'browser': 'default',
+                             'date_land': '2017-03-25 04:33:31',
+                             'date_submit': '0000-00-00 00:00:00',
+                             'network_id': 'f5861ab838',
+                             'platform': 'other',
+                             'referer': 'https://ainkaran.typeform.com/to/cZGxu9?typeform-embed=embed-widget',
+                             'user_agent': 'Mozilla/5.0 (Windows NT 6.3; '
+                                           'Win64; x64) '
+                                           'AppleWebKit/537.36 (KHTML, '
+                                           'like Gecko) '
+                                           'Chrome/56.0.2924.87 '
+                                           'Safari/537.36'},
+                'token': '3ca2888dc56ccbd22e81c8a2e11c9b38'},
+               {'answers': {},
+                'completed': '0',
+                'hidden': [],
+                'metadata': {'browser': 'default',
+                             'date_land': '2017-03-25 04:34:20',
+                             'date_submit': '0000-00-00 00:00:00',
+                             'network_id': 'f5861ab838',
+                             'platform': 'other',
+                             'referer': 'https://ainkaran.typeform.com/to/cZGxu9?typeform-embed=embed-widget',
+                             'user_agent': 'Mozilla/5.0 (Windows NT 6.3; '
+                                           'Win64; x64) '
+                                           'AppleWebKit/537.36 (KHTML, '
+                                           'like Gecko) '
+                                           'Chrome/56.0.2924.87 '
+                                           'Safari/537.36'},
+                'token': 'a6f3287df67cb4fc64f3c756e04de514'},
+               {'answers': {},
+                'completed': '0',
+                'hidden': [],
+                'metadata': {'browser': 'default',
+                             'date_land': '2017-03-25 04:34:21',
+                             'date_submit': '0000-00-00 00:00:00',
+                             'network_id': 'f5861ab838',
+                             'platform': 'other',
+                             'referer': 'https://ainkaran.typeform.com/to/cZGxu9?typeform-embed=embed-widget',
+                             'user_agent': 'Mozilla/5.0 (Windows NT 6.3; '
+                                           'Win64; x64) '
+                                           'AppleWebKit/537.36 (KHTML, '
+                                           'like Gecko) '
+                                           'Chrome/56.0.2924.87 '
+                                           'Safari/537.36'},
+                'token': 'b709c2feb8f61c6b4285c775ba14f79f'},
+               {'answers': {},
+                'completed': '0',
+                'hidden': [],
+                'metadata': {'browser': 'default',
+                             'date_land': '2017-03-25 04:35:19',
+                             'date_submit': '0000-00-00 00:00:00',
+                             'network_id': 'f5861ab838',
+                             'platform': 'other',
+                             'referer': 'https://ainkaran.typeform.com/to/cZGxu9?typeform-embed=embed-widget',
+                             'user_agent': 'Mozilla/5.0 (Windows NT 6.3; '
+                                           'Win64; x64) '
+                                           'AppleWebKit/537.36 (KHTML, '
+                                           'like Gecko) '
+                                           'Chrome/56.0.2924.87 '
+                                           'Safari/537.36'},
+                'token': '36fe6b32775ef7973ea28f8e56824378'},
+               {'answers': {},
+                'completed': '0',
+                'hidden': [],
+                'metadata': {'browser': 'default',
+                             'date_land': '2017-03-25 04:35:19',
+                             'date_submit': '0000-00-00 00:00:00',
+                             'network_id': 'f5861ab838',
+                             'platform': 'other',
+                             'referer': 'https://ainkaran.typeform.com/to/cZGxu9?typeform-embed=embed-widget',
+                             'user_agent': 'Mozilla/5.0 (Windows NT 6.3; '
+                                           'Win64; x64) '
+                                           'AppleWebKit/537.36 (KHTML, '
+                                           'like Gecko) '
+                                           'Chrome/56.0.2924.87 '
+                                           'Safari/537.36'},
+                'token': '97078f62723fc9646ab62e3086ed92b1'}],
+ 'stats': {'responses': {'completed': 1, 'showing': 20, 'total': 20}}}
+>>> 
