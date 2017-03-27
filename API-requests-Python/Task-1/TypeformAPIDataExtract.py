@@ -3,6 +3,8 @@ https://www.safaribooksonline.com/library/view/python-cookbook-3rd/9781449357337
 https://docs.python.org/3/tutorial/datastructures.html
 http://stackoverflow.com/questions/33308538/how-to-extract-specific-multiple-values-in-json-using-python
 https://www.codecademy.com/ja/courses/python-intermediate-en-6zbLp/0/4?curriculum_id=50ecb8cb058fd2ebda00003b
+https://www.youtube.com/watch?v=uYlgOFsnxEk
+https://github.com/ainkaran/repo/blob/master/API-requests-Python/Task-1/TypeformAPIDataExtract.py
 
 '''
 """
@@ -30,11 +32,11 @@ Typeform API key: ac83034cfa742c0f79c26e9a612b4ba7e2aa0d3d
 -this program will import Customer Responses from Typform site using API request in Python
 -CREATED two separate list objects for questions and answers
 -CONVERTED dict to list object
--a final table (.csv) 
--have to remove 'id' and 'field_id' from questions object (in JSON)
--have to pivot rows into columns
--have to fix the code to remove the duplicate response value from the table
--have an issue matching a correct answer (value) to each question (value)   
+-have to remove 'id' and 'field_id' from questions object (in JSON), DONE
+-have to fix the code to remove the duplicate response value from the table, DONE
+-have an issue matching a correct answer (value) to each question (value), DONE
+--a final table (.csv)
+-have to pivot rows into columns, DONE, there could be other way we can display the questions and answers in a table 
 
 '''
 
@@ -75,136 +77,69 @@ with open('C:/Users/Administrator/Documents/1-Python/CustFeedback.json', encodin
       
         cust_data_questions = customer_parsed['questions']
         #print(cust_data_questions)
-
         #print(type(cust_data_questions))
         #print(len(cust_data_questions))
       
         cust_data_answers = [customer_parsed['responses'][1]['answers']]
         #print(cust_data_answers)
-
         #print(type(cust_data_answers))
         #print(len(cust_data_answers))
+        
 
         # open a file for writing
-
         customer_response_data = open('C:/Users/Administrator/Documents/1-Python/CustomerResponse.csv', 'w')
 
         # create the csv writer object
-
         csvwriter = csv.writer(customer_response_data, delimiter = ',')
+                   
 
-        count = 0
+        #print(type(customer_parsed['questions'][0]))
+        #print(type(customer_parsed['responses'][1]['answers']))
 
-        for custQ in cust_data_questions:
+        #print(customer_parsed['questions'][1])
+        #print(customer_parsed['responses'][1]['answers'])
 
-                #countA = 0
-                for custA in cust_data_answers:
 
-                        if count == 0:
+        questions = customer_parsed['questions'][0]
+        answers = customer_parsed['responses'][1]['answers']
+        
+        for i in range(len(cust_data_questions)):
 
-                                headerQ = custQ.keys()
-                                headerA = custA.keys()
+                questions = customer_parsed['questions'][i]
+                #print(questions['id'])
+                #print(customer_parsed['questions'][i]['question'])
+                #print(answers[questions['id']][i])
+                                    
+                array = []                        
 
-                                headerlistQ = list(headerQ)
-                                headerlistA = list(headerA)
-                               
-                                sortedheaderlistQ = sorted(headerlistQ)
-                                sortedheaderlistA = sorted(headerlistA)
+                if questions['id'] in answers:
+                        #print(customer_parsed['questions'][i]['question'])                        
+                        #print(answers[questions['id']])
 
-                                print(sortedheaderlistQ[1])
-                                #print(sortedheaderlistQ[1])
-                                #print(sortedheaderlistQ[2])
+                        q1 = customer_parsed['questions'][i]['question']                        
+                        a1 = answers[questions['id']]
+                        
+                        array.append(q1)
+                        array.append(a1)
+                        #print(array)
+                        
+                        #csvwriter.writerow([customer_parsed['questions'][i]['question']])
+                        #csvwriter.writerow([answers[questions['id']]])
+                else:
+                        #print(customer_parsed['questions'][i]['question'])
+                        #print('NaN')
 
-                                #print(sortedheaderlistA[0])
-                                #print(sortedheaderlistA[1])
-                                #print(sortedheaderlistA[2])
-                                
-                                #csvwriter.writerow(sortedheaderlistQ[0])
-                                #csvwriter.writerow(sortedheaderlistQ[1])
-                                #csvwriter.writerow(sortedheaderlistQ[2])                        
+                        q2 = customer_parsed['questions'][i]['question']                        
+                        a2 = ['NaN']                        
+                        
+                        array.append(q2)
+                        array.append(a2)
+                        #print(array)
 
-                        count += 1                        
+                        #csvwriter.writerow([customer_parsed['questions'][i]['question']])
+                        #csvwriter.writerow(['NaN'])
 
-                        #print(type(custQ.values()))
-                        #print(type(custA.values()))                  
-
-                        valueslistQ = list(custQ.values())
-                        valueslistA = list(custA.values())
-                  
-
-                        #valueslist.pop(0)
-                        #valueslist.pop()
-                  
-                  
-                        #print(type(valueslistQ))
-                        #print(type(valueslistA))
-                  
-                  
-                        #newvalueslist = [s for s in valueslist if s.isdigit()]
-                  
-                        #sortedvalueslist = sorted(valueslist)
-                        #print(type(valueslist))                                 
-
-                  
-                        #for k, v in cust_data_questions.items():
-                        #print(k, v)                         
-                        #print(v)                  
-                          
-                        #if (valueslistQ[count] == k):
-                                #d=csvwriter.writerow([value])
-                        #else:
-                                #csvwriter.writerow(["NaN"])  
-                  
-                        csvwriter.writerow([valueslistQ[0]])
-                        csvwriter.writerow([valueslistQ[1]])
-                        csvwriter.writerow([valueslistQ[2]])                 
-
-                        #csvwriter.writerow([valueslistA[0]])
-                        #csvwriter.writerow([valueslistA[1]])
-                        #csvwriter.writerow([valueslistA[2]])
-                                 
-                        #if any(row[key] in ('NaN', "")
-
-                        #csvwriter.writerow(headerlistA.values())                        
-
-                        #print(sortedheaderlistQ[1])
-                        #print(valueslistQ[1])
-
-                        #print(sortedheaderlistA[len(custQ)])
-                        #print(valueslistA[len(custQ)])
-
-                        #print(len(cust_data_questions))
-                        #print(len(custQ))
-
-                        #print(len(custA))
-                  
-                        #rex1  = re.compile('(?<=\'rating_wYTo\': \")[a-zA-Z_\- ]+(?=\")')
-                        #rex1  = re.compile('rating_wYTo:')
-                        #rex2 = rex1.findall(customer_data.read())  
-                        #print(rex2)                 
-                                  
-
-                        #a=sorted(list(cust_data_questions['responses'][0]['answers'].keys()))
-                        #a=sorted(list(cust_data_answers.keys()))
-
-                        #print(sortedheaderlistA[0])
-                        #print(customer_parsed['questions'][12]['id'])
-                        #print(sorted(valueslistA))
+                csvwriter.writerow(array)
                 
-                        #for i in cust_data_questions:
-                        for key,value in customer_parsed['responses'][1]['answers'].items():                                                                                 
-
-                                #print(customer_parsed['responses'][1]['answers'].items())
-                                #print(cust_data_questions[i]['id'])                                                                         
-                                                                
-                                #print(customer_parsed['questions'][0]['id'])
-                                #print(key,value)
-                                if (customer_parsed['questions'][12]['id'] == sortedheaderlistA[0]):                                        
-                                        csvwriter.writerow([valueslistA[0]])
-                                        #print(valueslistA[4])
-                                        #print(key)
-                                        print(value)                          
-                                else:
-                                        csvwriter.writerow(["NaN"])
   
 customer_response_data.close()
