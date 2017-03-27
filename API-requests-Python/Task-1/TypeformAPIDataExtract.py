@@ -95,116 +95,81 @@ with open('C:/Users/Administrator/Documents/1-Python/CustFeedback.json', encodin
 
         count = 0
 
+        #for i in (0,1,2,3,4,5):
+        #for Qkey,Qvalue in customer_parsed['questions']['question'].items():
         for custQ in cust_data_questions:
 
-                #countA = 0
-                for custA in cust_data_answers:
-
-                        if count == 0:
-
-                                headerQ = custQ.keys()
-                                headerA = custA.keys()
-
-                                headerlistQ = list(headerQ)
-                                headerlistA = list(headerA)
-                               
-                                sortedheaderlistQ = sorted(headerlistQ)
-                                sortedheaderlistA = sorted(headerlistA)
-
-                                print(sortedheaderlistQ[1])
-                                #print(sortedheaderlistQ[1])
-                                #print(sortedheaderlistQ[2])
-
-                                #print(sortedheaderlistA[0])
-                                #print(sortedheaderlistA[1])
-                                #print(sortedheaderlistA[2])
-                                
-                                #csvwriter.writerow(sortedheaderlistQ[0])
-                                #csvwriter.writerow(sortedheaderlistQ[1])
-                                #csvwriter.writerow(sortedheaderlistQ[2])                        
-
-                        count += 1                        
-
-                        #print(type(custQ.values()))
-                        #print(type(custA.values()))                  
-
+                if count == 0:
+                        
+                        
+                        headerQ = custQ.keys()
+                        headerlistQ = list(headerQ)
+                        sortedheaderlistQ = sorted(headerlistQ)
                         valueslistQ = list(custQ.values())
-                        valueslistA = list(custA.values())
-                  
+                        
 
-                        #valueslist.pop(0)
-                        #valueslist.pop()
-                  
-                  
-                        #print(type(valueslistQ))
-                        #print(type(valueslistA))
-                  
-                  
-                        #newvalueslist = [s for s in valueslist if s.isdigit()]
-                  
-                        #sortedvalueslist = sorted(valueslist)
-                        #print(type(valueslist))                                 
+                        #count += 1
 
-                  
-                        #for k, v in cust_data_questions.items():
-                        #print(k, v)                         
-                        #print(v)                  
-                          
-                        #if (valueslistQ[count] == k):
-                                #d=csvwriter.writerow([value])
-                        #else:
-                                #csvwriter.writerow(["NaN"])  
-                  
+                        '''
                         csvwriter.writerow([valueslistQ[0]])
                         csvwriter.writerow([valueslistQ[1]])
-                        csvwriter.writerow([valueslistQ[2]])                 
+                        csvwriter.writerow([valueslistQ[2]])                        
+                        '''
 
-                        #csvwriter.writerow([valueslistA[0]])
-                        #csvwriter.writerow([valueslistA[1]])
-                        #csvwriter.writerow([valueslistA[2]])
-                                 
-                        #if any(row[key] in ('NaN', "")
+                        '''
+                        some_dict = {1: "Hello", 2: "Goodbye", 3: "You say yes", 4: "I say no"}
+                        value_to_remove = "You say yes"
+                        key_to_remove = 3
 
-                        #csvwriter.writerow(headerlistA.values())                        
+                        some_dict = {key: value for key, value in some_dict.items() if key is not key_to_remove}
+                        '''
 
-                        #print(sortedheaderlistQ[1])
-                        #print(valueslistQ[1])
+                        #print(valueslistQ)
+                        
+                        #print(customer_parsed)
+                        #print(cust_data_questions[1]['id'])
+                                                
+                        sortedheaderlistQ = sorted(list(customer_parsed['responses'][1]['answers'].keys()))
+                        #valueslistQ = sorted(list(customer_parsed['responses'][1]['answers'].values()))
 
-                        #print(sortedheaderlistA[len(custQ)])
-                        #print(valueslistA[len(custQ)])
+                        
+                        #print(customer_parsed['questions'][0].keys())
+                        
+                        sortedheaderlistA = sorted(list(customer_parsed['responses'][1]['answers'].keys()))
+                        valueslistA = sorted(list(customer_parsed['responses'][1]['answers'].values()))
 
-                        #print(len(cust_data_questions))
-                        #print(len(custQ))
-
-                        #print(len(custA))
-                  
-                        #rex1  = re.compile('(?<=\'rating_wYTo\': \")[a-zA-Z_\- ]+(?=\")')
-                        #rex1  = re.compile('rating_wYTo:')
-                        #rex2 = rex1.findall(customer_data.read())  
-                        #print(rex2)                 
-                                  
-
-                        #a=sorted(list(cust_data_questions['responses'][0]['answers'].keys()))
-                        #a=sorted(list(cust_data_answers.keys()))
-
-                        #print(sortedheaderlistA[0])
-                        #print(customer_parsed['questions'][12]['id'])
-                        #print(sorted(valueslistA))
+                        #print(sorted(list(customer_parsed['questions'][0].keys()))[0])
+                        #print(sorted(list(customer_parsed['questions'][0].values()))[0])
                 
                         #for i in cust_data_questions:
-                        for key,value in customer_parsed['responses'][1]['answers'].items():                                                                                 
+                        for i in (0,1,2,3,4,5,6,7,8,9,10,11,12):
+                                for key,value in customer_parsed['responses'][1]['answers'].items():                                                                        
 
-                                #print(customer_parsed['responses'][1]['answers'].items())
-                                #print(cust_data_questions[i]['id'])                                                                         
-                                                                
-                                #print(customer_parsed['questions'][0]['id'])
-                                #print(key,value)
-                                if (customer_parsed['questions'][12]['id'] == sortedheaderlistA[0]):                                        
-                                        csvwriter.writerow([valueslistA[0]])
-                                        #print(valueslistA[4])
-                                        #print(key)
-                                        print(value)                          
-                                else:
-                                        csvwriter.writerow(["NaN"])
+                                        
+                                        #print(customer_parsed['responses'][1]['answers'].items())
+                                        #print(cust_data_questions[i]['id'])                                                                         
+                                                                        
+                                        #print(customer_parsed['questions'][0]['id'])
+                                        #print(key,value)
+
+                                        
+                                        if (customer_parsed['questions'][i]['id'] == key ):                                        
+                                                csvwriter.writerow([list(customer_parsed['questions'][i].values())])
+                                                csvwriter.writerow([value])
+                                                       
+                                                #print([sorted(list(customer_parsed['questions'][0].values())[2])])
+                                                print(cust_data_questions[0]['id'])
+                                                #print(key)
+                                                #print(sortedheaderlistQ)
+                                                #print(value)
+                                                #print(valueslistQ)
+                                        else:
+                                                csvwriter.writerow([list(customer_parsed['questions'][i].values())])
+                                                csvwriter.writerow(["NaN"])
+                                                #print('NaA')
+                                                #print(key)
+                                                #print(sortedheaderlistQ)
+
+                                                
   
 customer_response_data.close()
