@@ -36,7 +36,7 @@ Typeform API key: ac83034cfa742c0f79c26e9a612b4ba7e2aa0d3d
 -have to fix the code to remove the duplicate response value from the table, DONE
 -have an issue matching a correct answer (value) to each question (value), DONE
 --a final table (.csv)
--have to pivot rows into columns
+-have to pivot rows into columns, DONE, there could be other way we can display the questions and answers in a table 
 
 '''
 
@@ -121,7 +121,7 @@ with open('C:/Users/Administrator/Documents/1-Python/CustFeedback.json', encodin
                         
                         array.append(q1)
                         array.append(a1)
-                        print(array)
+                        #print(array)
                         
                         #csvwriter.writerow([customer_parsed['questions'][i]['question']])
                         #csvwriter.writerow([answers[questions['id']]])
@@ -134,7 +134,7 @@ with open('C:/Users/Administrator/Documents/1-Python/CustFeedback.json', encodin
                         
                         array.append(q2)
                         array.append(a2)
-                        print(array)
+                        #print(array)
 
                         #csvwriter.writerow([customer_parsed['questions'][i]['question']])
                         #csvwriter.writerow(['NaN'])
