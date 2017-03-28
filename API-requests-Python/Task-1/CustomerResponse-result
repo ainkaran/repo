@@ -1,26 +1,13 @@
-From what kind of device did you place your order?,Smartphone
-
-"How would you rate our online store, based on...",['NaN']
-
-Design and presentation?,5
-
-Range of products?,['NaN']
-
-Ease of finding what you wanted to buy?,['NaN']
-
-The clarity of our product descriptions?,['NaN']
-
-"And how would you rate our delivery service, based on...",['NaN']
-
-Speed of delivery?,['NaN']
-
-Friendliness of delivery driver?,['NaN']
-
-Quality and condition of the received product?,['NaN']
-
-How likely are you to recommend us to a friend or colleague?,10
-
-Are there any comments or suggestions you'd like to share with us?,Very good
-
-"<strong>Finally, would you like 15% off your next shop?<br /></strong>Leave us your email address and we'll send you a coupon.",pat.ainkaran@gmail.com
-
+"From what kind of device did you place your order?","Smartphone","Smartwatch","Laptop"
+"How would you rate our online store, based on...","['NaN']","['NaN']","['NaN']"
+"Design and presentation?","5","4","1"
+"Range of products?","['NaN']","3","2"
+"Ease of finding what you wanted to buy?","['NaN']","5","1"
+"The clarity of our product descriptions?","['NaN']","4","1"
+"And how would you rate our delivery service, based on...","['NaN']","['NaN']","['NaN']"
+"Speed of delivery?","['NaN']","3","1"
+"Friendliness of delivery driver?","['NaN']","5","1"
+"Quality and condition of the received product?","['NaN']","4","1"
+"How likely are you to recommend us to a friend or colleague?","10","7","6"
+"Are there any comments or suggestions you'd like to share with us?","Very good","nice typeform","ding ding dong"
+"<strong>Finally, would you like 15% off your next shop?<br /></strong>Leave us your email address and we'll send you a coupon.","pat.ainkaran@gmail.com","pat.ainkaran@gmail.com","ainkaran@pmail.com"

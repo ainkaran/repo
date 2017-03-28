@@ -36,7 +36,7 @@ Typeform API key: ac83034cfa742c0f79c26e9a612b4ba7e2aa0d3d
 -have to fix the code to remove the duplicate response value from the table, DONE
 -have an issue matching a correct answer (value) to each question (value), DONE
 --a final table (.csv)
--have to pivot rows into columns, DONE, there could be other way we can display the questions and answers in a table 
+-have to pivot columns to rows, DONE, there could be other way we can display the questions and answers in a table 
 
 '''
 
@@ -53,7 +53,7 @@ except:
         print ('Could not access webpage!')
 
 #for line in webpage:
-#        print(line)
+#print(line)
 
 response = json.loads(webpage.read().decode('utf-8'))
 
@@ -90,56 +90,58 @@ with open('C:/Users/Administrator/Documents/1-Python/CustFeedback.json', encodin
         customer_response_data = open('C:/Users/Administrator/Documents/1-Python/CustomerResponse.csv', 'w')
 
         # create the csv writer object
-        csvwriter = csv.writer(customer_response_data, delimiter = ',')
-                   
+        #csvwriter = csv.writer(customer_response_data, delimiter = ',', lineterminator='\n')
+        csvwriter = csv.writer(customer_response_data, delimiter = ',', lineterminator='\n', quoting=csv.QUOTE_ALL)           
+       
+        questions = customer_parsed['questions'][0]        
+        answers = customer_parsed['responses']
 
-        #print(type(customer_parsed['questions'][0]))
-        #print(type(customer_parsed['responses'][1]['answers']))
-
-        #print(customer_parsed['questions'][1])
-        #print(customer_parsed['responses'][1]['answers'])
-
-
-        questions = customer_parsed['questions'][0]
-        answers = customer_parsed['responses'][1]['answers']
-        
+        #print(type(answers))
+        #print(len(answers))      
+                
+        #def pivotRowsToColumns():
+		
+        #matching questions with right answers, some answers could be NaN, tested for two customer responses 
         for i in range(len(cust_data_questions)):
 
                 questions = customer_parsed['questions'][i]
                 #print(questions['id'])
                 #print(customer_parsed['questions'][i]['question'])
-                #print(answers[questions['id']][i])
-                                    
-                array = []                        
+                                
+                array = []               
 
-                if questions['id'] in answers:
-                        #print(customer_parsed['questions'][i]['question'])                        
-                        #print(answers[questions['id']])
+                q = customer_parsed['questions'][i]['question']
+                array.append(q)
+                                
+                #print(range(len(answers)))
+                for j in range(len(answers)):                      
 
-                        q1 = customer_parsed['questions'][i]['question']                        
-                        a1 = answers[questions['id']]
+                        #print(answers[j]['answers'].get(questions['id']))
+                        #print(questions['id'] in answers[j]['answers'])
                         
-                        array.append(q1)
-                        array.append(a1)
-                        #print(array)
-                        
-                        #csvwriter.writerow([customer_parsed['questions'][i]['question']])
-                        #csvwriter.writerow([answers[questions['id']]])
-                else:
-                        #print(customer_parsed['questions'][i]['question'])
-                        #print('NaN')
+                        if questions['id'] in answers[j]['answers']:                                                        
+                                #print(answers[j]['answers'].get(questions['id']))
+                                #print(answers[j]['answers'])
+                                                        
+                                a1 = answers[j]['answers'].get(questions['id'])                                                                
+                                array.append(a1)                                
+                                                                
+                        elif len(answers[j]['answers']) != 0:                                
+                                #print('NaN')                                
+                                
+                                a2 = ['NaN']                               
+                                array.append(a2)                              
 
-                        q2 = customer_parsed['questions'][i]['question']                        
-                        a2 = ['NaN']                        
-                        
-                        array.append(q2)
-                        array.append(a2)
-                        #print(array)
+                print(len(array))
+                                
+                #pivot columns to rows
+                #new_array = zip(*array)
 
-                        #csvwriter.writerow([customer_parsed['questions'][i]['question']])
-                        #csvwriter.writerow(['NaN'])
-
-                csvwriter.writerow(array)
-                
+                #seq=[i,i,i,i]
+                #csvwriter.writerow(seq)
+                #csvwriter.writerow("\n")
+                                        
+                csvwriter.writerow(array) 
+        #out.writerow([pivotRowsToColumns()]) # writerow() expects a sequence a list or a tuple.
   
 customer_response_data.close()
