@@ -101,8 +101,15 @@ with open('C:/Users/Administrator/Documents/1-Python/CustFeedback.json', encodin
 
 
         questions = customer_parsed['questions'][0]
-        answers = customer_parsed['responses'][1]['answers']
-        
+        #answers = customer_parsed['responses'][1]['answers']
+
+        answers = customer_parsed['responses']
+
+        #print(type(answers))
+        #print(len(answers))
+
+        #print(answers)
+                
         for i in range(len(cust_data_questions)):
 
                 questions = customer_parsed['questions'][i]
@@ -110,34 +117,47 @@ with open('C:/Users/Administrator/Documents/1-Python/CustFeedback.json', encodin
                 #print(customer_parsed['questions'][i]['question'])
                 #print(answers[questions['id']][i])
                                     
-                array = []                        
+                array = []
 
-                if questions['id'] in answers:
-                        #print(customer_parsed['questions'][i]['question'])                        
-                        #print(answers[questions['id']])
+                #print(range(len(answers)))
 
-                        q1 = customer_parsed['questions'][i]['question']                        
-                        a1 = answers[questions['id']]
-                        
-                        array.append(q1)
-                        array.append(a1)
-                        #print(array)
-                        
-                        #csvwriter.writerow([customer_parsed['questions'][i]['question']])
-                        #csvwriter.writerow([answers[questions['id']]])
-                else:
-                        #print(customer_parsed['questions'][i]['question'])
-                        #print('NaN')
+                for j in range(len(answers)):
 
-                        q2 = customer_parsed['questions'][i]['question']                        
-                        a2 = ['NaN']                        
-                        
-                        array.append(q2)
-                        array.append(a2)
-                        #print(array)
+                        #print(list(answers))
+                        #print(customer_parsed['responses'])
 
-                        #csvwriter.writerow([customer_parsed['questions'][i]['question']])
-                        #csvwriter.writerow(['NaN'])
+                        #print(answers[j]['answers'].get(questions['id']))
+                        #print(questions['id'] in answers[j]['answers'])
+
+                        if questions['id'] in answers[j]['answers']:
+                                #print(customer_parsed['questions'][i]['question'])                        
+                                #print(answers[j]['answers'].get(questions['id']))
+
+                                #print(answers[j]['answers'])
+
+                                q1 = customer_parsed['questions'][i]['question']                        
+                                a1 = answers[j]['answers'].get(questions['id'])
+                                
+                                array.append(q1)
+                                array.append(a1)
+                                #print(array)
+                                
+                                #csvwriter.writerow([customer_parsed['questions'][i]['question']])
+                                #csvwriter.writerow([answers[questions['id']]])
+                        elif len(answers[j]['answers']) != 0:
+                                #print(customer_parsed['questions'][i]['question'])
+                                #print('NaN')
+                                print(answers[j]['answers'])
+
+                                q2 = customer_parsed['questions'][i]['question']                        
+                                a2 = ['NaN']                        
+                                
+                                array.append(q2)
+                                array.append(a2)
+                                #print(array)
+
+                                #csvwriter.writerow([customer_parsed['questions'][i]['question']])
+                                #csvwriter.writerow(['NaN'])
 
                 csvwriter.writerow(array)
                 
